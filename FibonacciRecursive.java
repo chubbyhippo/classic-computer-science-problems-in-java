@@ -1,4 +1,4 @@
-public class Fib {
+public class FibonacciRecursive {
     private static int fib(int n) {
         if (n < 2) {
             return n;
@@ -7,6 +7,6 @@ public class Fib {
     }
 
     public static void main(String[] args) {
-        System.out.println(fib(5));
+        System.out.println(fib(40));
     }
 }
