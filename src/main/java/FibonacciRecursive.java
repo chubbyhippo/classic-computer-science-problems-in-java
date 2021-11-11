@@ -7,9 +7,9 @@ public class FibonacciRecursive {
     }
 
     public static void main(String[] args) {
-        long start = System.nanoTime();
+        var start = System.nanoTime();
         System.out.println(fib(40));
-        long elapsedTime = System.nanoTime() - start;
+        var elapsedTime = System.nanoTime() - start;
         System.out.println(elapsedTime);
     }
 }
