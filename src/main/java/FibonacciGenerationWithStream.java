@@ -6,7 +6,7 @@ public class FibonacciGenerationWithStream {
 
     public IntStream stream() {
         return IntStream.generate(() -> {
-            int oldLast = last;
+            var oldLast = last;
             last = next;
             next = oldLast + next;
             return oldLast;
@@ -14,7 +14,7 @@ public class FibonacciGenerationWithStream {
     }
 
     public static void main(String[] args) {
-        FibonacciGenerationWithStream fib = new FibonacciGenerationWithStream();
+        var fib = new FibonacciGenerationWithStream();
         fib.stream().limit(41).forEachOrdered(System.out::println);
     }
 
