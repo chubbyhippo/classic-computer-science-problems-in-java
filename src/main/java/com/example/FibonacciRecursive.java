@@ -1,3 +1,5 @@
+package com.example;
+
 public class FibonacciRecursive {
     private static int fib(int n) {
         if (n < 2) {
