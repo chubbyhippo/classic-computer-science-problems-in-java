@@ -16,6 +16,7 @@
         <mockito-junit-jupiter.version>5.10.0</mockito-junit-jupiter.version>
         <assertj-core.version>3.25.2</assertj-core.version>
         <slf4j-api.version>2.0.12</slf4j-api.version>
+        <logback-classic.version>1.5.3</logback-classic.version>
     </properties>
 
     <dependencies>
@@ -45,7 +46,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.5.3</version>
+            <version>${logback-classic.version}</version>
         </dependency>
     </dependencies>
 
