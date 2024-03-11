@@ -1,3 +1,5 @@
+package com.example;
+
 import java.util.stream.IntStream;
 
 public class FibonacciGenerationWithStream {
