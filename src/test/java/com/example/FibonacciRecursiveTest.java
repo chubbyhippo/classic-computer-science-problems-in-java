@@ -16,9 +16,9 @@ class FibonacciRecursiveTest {
     void shouldReturnFibRecursive() {
 
         var start = System.nanoTime();
-        log.info("{}", fib(40));
+        log.info("fib:{}", fib(40));
         var elapsedTime = System.nanoTime() - start;
-        log.info("{}", elapsedTime);
+        log.info("elapsed time:{}", elapsedTime);
 
         assertThat(fib(1)).isPositive();
 
