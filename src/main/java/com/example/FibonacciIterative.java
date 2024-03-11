@@ -1,3 +1,5 @@
+package com.example;
+
 public class FibonacciIterative {
 
     private static int fib(int n) {
