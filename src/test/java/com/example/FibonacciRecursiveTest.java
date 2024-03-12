@@ -5,11 +5,27 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.reflect.InvocationTargetException;
+
 import static com.example.FibonacciRecursive.fib;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class FibonacciRecursiveTest {
     private static final Logger log = LoggerFactory.getLogger(FibonacciRecursiveTest.class);
+
+    @Test
+    @DisplayName("should throw illegal state exception when initialized")
+    void shouldThrowIllegalStateExceptionWhenInitialized() {
+        var constructor = FibonacciRecursive.class.getDeclaredConstructors()[0];
+        constructor.setAccessible(true);
+        try {
+            constructor.newInstance();
+        } catch (IllegalStateException | InstantiationException | IllegalAccessException |
+                 InvocationTargetException exception) {
+            assertThat(exception.getCause().getClass()).isEqualTo(IllegalStateException.class);
+            assertThat(exception.getCause().getMessage()).isEqualTo("Utility class");
+        }
+    }
 
     @Test
     @DisplayName("should return fib recursive")
