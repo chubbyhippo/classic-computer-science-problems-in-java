@@ -1,4 +1,4 @@
-package com.example;
+package com.example.fibonacci;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
-import static com.example.FibonacciRecursive.fib;
+import static com.example.fibonacci.FibonacciRecursive.fib;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class FibonacciRecursiveTest {
