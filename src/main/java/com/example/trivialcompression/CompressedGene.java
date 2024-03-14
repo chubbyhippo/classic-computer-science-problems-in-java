@@ -22,24 +22,24 @@ public class CompressedGene {
             final int firstLocation = 2 * i;
             final int secondLocation = 2 * i + 1;
             switch (upperGene.charAt(i)) {
-                case 'A': // 00 are next two bits
+                case 'A' -> {
                     bitSet.set(firstLocation, false);
-                    bitSet.set(secondLocation, false);
-                    break;
-                case 'C': // 01 are next two bits
+                    bitSet.set(secondLocation, false); // 00 are next two bits
+                }
+                case 'C' -> {
                     bitSet.set(firstLocation, false);
-                    bitSet.set(secondLocation, true);
-                    break;
-                case 'G': // 10 are next two bits
+                    bitSet.set(secondLocation, true); // 01 are next two bits
+                }
+                case 'G' -> {
                     bitSet.set(firstLocation, true);
-                    bitSet.set(secondLocation, false);
-                    break;
-                case 'T': // 11 are next two bits
+                    bitSet.set(secondLocation, false); // 10 are next two bits
+                }
+                case 'T' -> {
                     bitSet.set(firstLocation, true);
-                    bitSet.set(secondLocation, true);
-                    break;
-                default:
-                    throw new IllegalArgumentException("The provided gene String contains characters other than ACGT");
+                    bitSet.set(secondLocation, true); // 11 are next two bits
+                }
+                default ->
+                        throw new IllegalArgumentException("The provided gene String contains characters other than ACGT");
             }
         }
     }
