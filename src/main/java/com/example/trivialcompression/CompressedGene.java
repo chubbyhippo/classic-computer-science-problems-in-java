@@ -55,20 +55,16 @@ public class CompressedGene {
             final int secondBit = (bitSet.get(i + 1) ? 1 : 0);
             final int lastBits = firstBit << 1 | secondBit;
             switch (lastBits) {
-                case 0b00: // 00 is 'A'
-                    builder.append('A');
-                    break;
-                case 0b01: // 01 is 'C'
-                    builder.append('C');
-                    break;
-                case 0b10: // 10 is 'G'
-                    builder.append('G');
-                    break;
-                case 0b11: // 11 is 'T'
-                    builder.append('T');
-                    break;
-                default:
-                    throw new IllegalArgumentException("The provided gene String contains characters other than lastBits");
+                case 0b00 -> // 00 is 'A'
+                        builder.append('A');
+                case 0b01 -> // 01 is 'C'
+                        builder.append('C');
+                case 0b10 -> // 10 is 'G'
+                        builder.append('G');
+                case 0b11 -> // 11 is 'T'
+                        builder.append('T');
+                default ->
+                        throw new IllegalArgumentException("The provided gene String contains characters other than lastBits");
             }
         }
         return builder.toString();
