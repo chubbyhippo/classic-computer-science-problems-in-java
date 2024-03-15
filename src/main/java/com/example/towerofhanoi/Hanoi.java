@@ -1,8 +1,12 @@
 package com.example.towerofhanoi;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Stack;
 
 public class Hanoi {
+    private static final Logger log = LoggerFactory.getLogger(Hanoi.class);
     private final int numDiscs;
     private final Stack<Integer> towerA = new Stack<>();
     private final Stack<Integer> towerB = new Stack<>();
@@ -29,6 +33,10 @@ public class Hanoi {
     }
 
     private void move(Stack<Integer> begin, Stack<Integer> end, Stack<Integer> temp, int n) {
+        log.info("Tower A: {}", towerA);
+        log.info("Tower B: {}", towerB);
+        log.info("Tower C: {}", towerC);
+
         if (n == 1) {
             end.push(begin.pop());
         } else {
