@@ -33,16 +33,25 @@ public class Hanoi {
     }
 
     private void move(Stack<Integer> begin, Stack<Integer> end, Stack<Integer> temp, int n) {
-        log.info("Tower A: {}", towerA);
-        log.info("Tower B: {}", towerB);
-        log.info("Tower C: {}", towerC);
+        log.info("Before moving, Tower A: {}", towerA);
+        log.info("Before moving, Tower B: {}", towerB);
+        log.info("Before moving, Tower C: {}", towerC);
 
         if (n == 1) {
             end.push(begin.pop());
         } else {
             move(begin, temp, end, n - 1);
+            log.info("After Moving 1, Tower A: {}", towerA);
+            log.info("After Moving 1, Tower B: {}", towerB);
+            log.info("After Moving 1, Tower C: {}", towerC);
             move(begin, end, temp, 1);
+            log.info("After Moving 2, Tower A: {}", towerA);
+            log.info("After Moving 2, Tower B: {}", towerB);
+            log.info("After Moving 2, Tower C: {}", towerC);
             move(temp, end, begin, n - 1);
+            log.info("After Moving 3, Tower A: {}", towerA);
+            log.info("After Moving 3, Tower B: {}", towerB);
+            log.info("After Moving 3, Tower C: {}", towerC);
         }
     }
 
