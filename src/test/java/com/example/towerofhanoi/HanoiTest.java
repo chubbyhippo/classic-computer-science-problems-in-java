@@ -16,11 +16,16 @@ class HanoiTest {
 
         int discs = 3;
         var hanoi = new Hanoi(discs);
+
+        log.info("Before solving, Tower A: {}", hanoi.getTowerA());
+        log.info("Before solving, Tower B: {}", hanoi.getTowerB());
+        log.info("Before solving, Tower C: {}", hanoi.getTowerC());
+
         hanoi.solve();
 
-        log.info("Tower A: {}", hanoi.getTowerA());
-        log.info("Tower B: {}", hanoi.getTowerB());
-        log.info("Tower C: {}", hanoi.getTowerC());
+        log.info("After solving, Tower A: {}", hanoi.getTowerA());
+        log.info("After solving, Tower B: {}", hanoi.getTowerB());
+        log.info("After solving, Tower C: {}", hanoi.getTowerC());
 
         assertThat(hanoi.getTowerC()).hasSize(discs);
     }
