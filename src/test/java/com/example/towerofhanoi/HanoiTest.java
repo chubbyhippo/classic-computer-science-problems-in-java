@@ -14,14 +14,15 @@ class HanoiTest {
     @DisplayName("should solve tower of hanoi puzzle")
     void shouldSolveTowerOfHanoiPuzzle() {
 
-        var hanoi = new Hanoi(3);
+        int discs = 3;
+        var hanoi = new Hanoi(discs);
         hanoi.solve();
 
         log.info("Tower A: {}", hanoi.getTowerA());
         log.info("Tower B: {}", hanoi.getTowerB());
         log.info("Tower C: {}", hanoi.getTowerC());
 
-        assertThat(hanoi.getTowerC()).hasSize(3);
+        assertThat(hanoi.getTowerC()).hasSize(discs);
     }
 
 }
