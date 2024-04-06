@@ -1,4 +1,4 @@
-package com.example.trivialcompression;
+package org.github.chubbyhippo.trivialcompression;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
