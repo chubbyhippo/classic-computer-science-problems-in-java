@@ -1,4 +1,4 @@
-package com.example.trivialcompression;
+package org.github.chubbyhippo.trivialcompression;
 
 import java.util.BitSet;
 
