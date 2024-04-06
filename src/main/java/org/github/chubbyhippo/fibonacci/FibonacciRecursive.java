@@ -1,4 +1,4 @@
-package com.example.fibonacci;
+package org.github.chubbyhippo.fibonacci;
 
 public class FibonacciRecursive {
     private FibonacciRecursive() {
