@@ -1,4 +1,4 @@
-package com.example.towerofhanoi;
+package org.github.chubbyhippo.towerofhanoi;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
