@@ -1,4 +1,4 @@
-package com.example.pi;
+package org.github.chubbyhippo.pi;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
