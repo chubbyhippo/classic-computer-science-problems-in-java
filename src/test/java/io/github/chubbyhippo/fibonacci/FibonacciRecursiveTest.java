@@ -1,4 +1,4 @@
-package org.github.chubbyhippo.fibonacci;
+package io.github.chubbyhippo.fibonacci;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,16 +7,16 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
-import static org.github.chubbyhippo.fibonacci.FibonacciStreamReduce.fib;
+import static io.github.chubbyhippo.fibonacci.FibonacciRecursive.fib;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class FibonacciStreamReduceTest {
-    private static final Logger log = LoggerFactory.getLogger(FibonacciStreamReduceTest.class);
+class FibonacciRecursiveTest {
+    private static final Logger log = LoggerFactory.getLogger(FibonacciRecursiveTest.class);
 
     @Test
     @DisplayName("should throw illegal state exception when initialized")
     void shouldThrowIllegalStateExceptionWhenInitialized() {
-        var constructor = FibonacciStreamReduce.class.getDeclaredConstructors()[0];
+        var constructor = FibonacciRecursive.class.getDeclaredConstructors()[0];
         constructor.setAccessible(true);
         try {
             constructor.newInstance();

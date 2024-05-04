@@ -1,4 +1,4 @@
-package org.github.chubbyhippo.fibonacci;
+package io.github.chubbyhippo.fibonacci;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,16 +7,17 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
-import static org.github.chubbyhippo.fibonacci.FibonacciRecursive.fib;
+import static io.github.chubbyhippo.fibonacci.FibonacciIterative.fib;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class FibonacciRecursiveTest {
-    private static final Logger log = LoggerFactory.getLogger(FibonacciRecursiveTest.class);
+class FibonacciIterativeTest {
+
+    private static final Logger log = LoggerFactory.getLogger(FibonacciIterativeTest.class);
 
     @Test
     @DisplayName("should throw illegal state exception when initialized")
     void shouldThrowIllegalStateExceptionWhenInitialized() {
-        var constructor = FibonacciRecursive.class.getDeclaredConstructors()[0];
+        var constructor = FibonacciIterative.class.getDeclaredConstructors()[0];
         constructor.setAccessible(true);
         try {
             constructor.newInstance();
@@ -28,8 +29,8 @@ class FibonacciRecursiveTest {
     }
 
     @Test
-    @DisplayName("should return fib recursive")
-    void shouldReturnFibRecursive() {
+    @DisplayName("should return fib iterative")
+    void shouldReturnFibIterative() {
 
         var start = System.nanoTime();
         log.info("fib:{}", fib(40));

@@ -1,4 +1,4 @@
-package org.github.chubbyhippo.pi;
+package io.github.chubbyhippo.fibonacci;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,15 +7,16 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationTargetException;
 
+import static io.github.chubbyhippo.fibonacci.FibonacciStreamReduce.fib;
 import static org.assertj.core.api.Assertions.assertThat;
 
-class PiCalculatorTest {
-    private static final Logger log = LoggerFactory.getLogger(PiCalculatorTest.class);
+class FibonacciStreamReduceTest {
+    private static final Logger log = LoggerFactory.getLogger(FibonacciStreamReduceTest.class);
 
     @Test
     @DisplayName("should throw illegal state exception when initialized")
     void shouldThrowIllegalStateExceptionWhenInitialized() {
-        var constructor = PiCalculator.class.getDeclaredConstructors()[0];
+        var constructor = FibonacciStreamReduce.class.getDeclaredConstructors()[0];
         constructor.setAccessible(true);
         try {
             constructor.newInstance();
@@ -27,15 +28,16 @@ class PiCalculatorTest {
     }
 
     @Test
-    @DisplayName("should return pi calculation result from n terms")
-    void shouldReturnPiCalculationResultFromNTerms() {
+    @DisplayName("should return fib recursive")
+    void shouldReturnFibRecursive() {
 
-        var pi = PiCalculator.calculatePi(Integer.MAX_VALUE);
-        log.info("Leibniz PI : {}", pi);
-        log.info("Math.PI : {}", Math.PI);
+        var start = System.nanoTime();
+        log.info("fib:{}", fib(40));
+        var elapsedTime = System.nanoTime() - start;
+        log.info("elapsed time:{}", elapsedTime);
 
-        assertThat(pi).isGreaterThan(3.14);
+        assertThat(fib(1)).isPositive();
+
     }
-
 
 }

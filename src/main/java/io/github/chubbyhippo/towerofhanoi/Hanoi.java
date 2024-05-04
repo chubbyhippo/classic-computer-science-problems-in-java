@@ -1,4 +1,4 @@
-package org.github.chubbyhippo.towerofhanoi;
+package io.github.chubbyhippo.towerofhanoi;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

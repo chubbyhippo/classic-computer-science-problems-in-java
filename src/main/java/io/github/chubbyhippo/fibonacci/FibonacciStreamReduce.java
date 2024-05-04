@@ -1,4 +1,4 @@
-package org.github.chubbyhippo.fibonacci;
+package io.github.chubbyhippo.fibonacci;
 
 import java.util.stream.IntStream;
 
